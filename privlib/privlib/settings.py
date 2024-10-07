@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from decouple import config
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'book.apps.BookConfig', #bookアプリケーションに自動追加された「book/apps.py」ファイル内にあるBookConfigクラスを指している
 ]
 
 MIDDLEWARE = [
@@ -74,10 +78,15 @@ WSGI_APPLICATION = 'privlib.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+#データベース設定
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'privlib',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -122,3 +131,45 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#ロギング設定
+LOGGING = {
+    'version': 1, #1固定
+    'disable_existing_loggers': False, #既存のロガーを無効化にする
+
+    #ロガーの設定
+    'loggers': {
+        #djangoアプリケーションのロガー設定
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        #bookアプリケーションのロガー設定
+        'book': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+
+    #ハンドラの設定
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'dev'
+        },
+    },
+
+    #フォーマッタの設定
+    'formatters': {
+        'dev': {
+            'format': '\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s'
+            ])
+        },
+    },
+}
