@@ -19,4 +19,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('book/', include('book.urls')), #bookアプリケーションのURL設定ファイルを読み込んでいる
 ]
