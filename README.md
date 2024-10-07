@@ -28,14 +28,14 @@
 
 ## 技術スタック（予定）
 
-|     技術領域      |     技術名     |
-| :---------------: | :------------: |
-|  フロントエンド   |     React      |
-| バックエンド(ORM) |     Django     |
-|   データベース    |   PostgreSQL   |
-|     インフラ      |      AWS       |
-|   Web サーバー    | Nginx/Gunicorn |
-|    SSL 証明書     | Let's Encrypt  |
+|    技術領域    |     技術名     |
+| :------------: | :------------: |
+| フロントエンド |     React      |
+|  バックエンド  |     Django     |
+|  データベース  |   PostgreSQL   |
+|    インフラ    |      AWS       |
+|  Web サーバー  | Nginx/Gunicorn |
+|   SSL 証明書   | Let's Encrypt  |
 
 **技術選定の理由**
 
