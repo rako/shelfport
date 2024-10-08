@@ -15,3 +15,11 @@ ENV/
 
 # VS Code
 .vscode/
+
+#env
+./pyvenv.cfg
+
+#
+./Include
+./Lib
+./Scripts
