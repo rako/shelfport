@@ -8,7 +8,7 @@ media/
 
 
 # Environments
-./privlib/.env
+/privlib/.env
 venv/
 env/
 ENV/
