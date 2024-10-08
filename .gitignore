@@ -17,9 +17,9 @@ ENV/
 .vscode/
 
 #env
-./pyvenv.cfg
+/pyvenv.cfg
 
 #
-Include/
-Lib/
-Scripts/
+/Include/
+/Lib/
+/Scripts/
