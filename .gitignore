@@ -20,6 +20,6 @@ ENV/
 /pyvenv.cfg
 
 #
-/Include/
-/Lib/
-/Scripts/
+/Include/*
+/Lib/*
+/Scripts/*
