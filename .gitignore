@@ -5,10 +5,10 @@
 __pycache__/
 db.sqlite3
 media/
-SERCET_KEY = 'django-insecure-9!n960#jrq#gf$i)h$7w#jin==%rkl!0e4!j5t!lyqz)gdoli_'
+
 
 # Environments
-.env
+./privlib/.env
 venv/
 env/
 ENV/
