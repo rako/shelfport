@@ -20,6 +20,4 @@ ENV/
 /pyvenv.cfg
 
 #
-/Include
-/Lib
-/Scripts
+/virtualenv
