@@ -23,6 +23,5 @@ ENV/
 /virtualenv
 
 #
-.prettierignore
 .*
 !.gitignore
