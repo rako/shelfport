@@ -8,5 +8,5 @@ class IndexView(generic.TemplateView):
     template_name = 'index.html' #テンプレートの表示に特化したビュークラスのクラス変数（template_name）を設定、アプリ用ディレクトリ内のtemplatesディレクトリ内から探す
 
 class InquiryView(generic.FormView):
-    template_name = "inqiry.html"
+    template_name = "inquiry.html"
     form_class = InquiryForm
