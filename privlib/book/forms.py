@@ -1,4 +1,7 @@
 from django import forms
+from django.core.mail import EmailMessage
+
+import os
 
 
 class InquiryForm(forms.Form):
@@ -9,7 +12,7 @@ class InquiryForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs['class'] = 'form-control'
+        self.fields['name'].widget.attrs['class'] = 'form-control' #widget.attrsでHTMLの属性を指定できる
         self.fields['name'].widget.attrs['placeholder'] = 'お名前をここに入力してください'
         self.fields['email'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['placeholder'] = 'メールアドレスをここに入力してください'
@@ -17,4 +20,22 @@ class InquiryForm(forms.Form):
         self.fields['title'].widget.attrs['placeholder'] = 'タイトルをここに入力してください'
         self.fields['message'].widget.attrs['class'] = 'form-control'
         self.fields['message'].widget.attrs['placeholder'] = 'メッセージをここに入力してください'
-        
+
+    def send_email(self): #メール送信処理
+        name = self.cleaned_data['name']
+        email = self.cleaned_data['email']
+        title = self.cleaned_data['title']
+        message = self.cleaned_data['message']
+
+        subject = 'お問い合わせ {}'.format(title)
+        message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(name, email, message)
+        from_email = os.environ['EMAIL_HOST_USER']
+        to_list = [
+            os.environ['EMAIL_HOST_USER']
+        ]
+        cc_list = [
+            email
+        ]
+
+        message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list, cc=cc_list)
+        message.send()
