@@ -29,9 +29,9 @@ class InquiryForm(forms.Form):
 
         subject = 'お問い合わせ {}'.format(title)
         message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(name, email, message)
-        from_email = os.environ['EMAIL_HOST_USER']
+        from_email = os.environ.get('FROM_EMAIL')
         to_list = [
-            os.environ['EMAIL_HOST_USER']
+            os.environ.get('FROM_EMAIL')
         ]
         cc_list = [
             email
