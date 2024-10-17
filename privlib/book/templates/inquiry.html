@@ -10,9 +10,9 @@
         <form method="post">
             {% csrf_token %}
 
-            {{ form.non_field_errors }}
+            {{ form.non_field_errors }} <!-- cleanメソッドなどで発生するフィールドに跨るエラーを取得 -->
 
-            {% for field in form %}
+            {% for field in form %} <!-- formフィールドを一つずつ取り出せる -->
             <div class="mb-4">
                 <label for="{{ field.id_for_label}}"" class="form-label">
                     <strong>{{ field.label_tag }}</strong>
