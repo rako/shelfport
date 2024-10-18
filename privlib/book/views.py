@@ -5,7 +5,7 @@ from .forms import InquiryForm
 
 import logging
 
-from djang.urls import reverse_lazy
+from django.urls import reverse_lazy
 
 logger = logging.getLogger(__name__)
 
