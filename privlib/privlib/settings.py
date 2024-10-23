@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'book.apps.BookConfig', ##bookアプリケーションに自動追加された「book/apps.py」ファイル内にあるBookConfigクラスを指している
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
