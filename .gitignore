@@ -8,10 +8,7 @@ media/
 
 
 # Environments
-/privlib/.env
-venv/
-env/
-ENV/
+vepl/
 
 # VS Code
 .vscode/
@@ -20,11 +17,5 @@ ENV/
 /pyvenv.cfg
 
 #
-/virtualenv
-
-#
 .*
 !.gitignore
-
-#
-vepl/
