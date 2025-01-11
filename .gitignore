@@ -1,21 +1,11 @@
+# VS Code
+.vscode/
+
+# Environments
+/VENV
+
 # Django
 *.log
 *.pot
 *.pyc
 __pycache__/
-db.sqlite3
-media/
-
-
-# Environments
-vepl/
-
-# VS Code
-.vscode/
-
-#env
-/pyvenv.cfg
-
-#
-.*
-!.gitignore

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <ul class="navbar-nav me-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% block active_book_list %}{% endblock %}"
+                            href="{% url 'book:book_list' %}">書籍一覧</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% block active_signup %}{% endblock %}"
+                            href="{% url 'account_signup' %}">登録</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block active_login %}{% endblock %}"
+                            href="{% url 'account_login' %}">ログイン</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        {% block header %} {% endblock %}
+        {% block contents %} {% endblock %}
+    </div>
+</body>
+
+</html>

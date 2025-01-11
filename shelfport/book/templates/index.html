@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}ShelfPort 本の情報をいい感じにまとめる{% endblock %}
+
+{% block header %}
+<a href="{% url 'account_login' %}"></a>
+{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <h1 class="title" style="display: block; text-align: center;">本の情報を様々な所から集めていい感じにまとめる</h1>
+    <h2 class="url" style="display: block; text-align: center;">
+        追加機能については
+        <a href="https://github.com/rako/shelfport">こちら</a>
+        からご確認ください。
+    </h2>
+</div>
+{% endblock %}]
