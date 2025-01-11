@@ -17,8 +17,8 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 EMAIL_BACKEND = 'django_ses.SESBackend'
 # AWSのリージョンがus-east-1(バージニア北部)以外の場合は設定が必要
-# AWS_SES_REGION_NAME = 'us-west-2'
-# AWS_SES_REGION_ENDPOINT = 'email.us-west-2.amazonaws.com'
+AWS_SES_REGION_NAME = 'us-west-2'
+AWS_SES_REGION_ENDPOINT = 'email.us-west-2.amazonaws.com'
 
 # ロギング設定
 LOGGING = {
