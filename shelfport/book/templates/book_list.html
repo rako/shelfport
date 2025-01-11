@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block header %}
+<link rel="stylesheet" href="{% static 'book/css/book.css' %}">
+{% endblock %}
 {% block title %}書籍一覧 | ShelfPort{% endblock %}
 
 {% block active_book_list %}active{% endblock %}

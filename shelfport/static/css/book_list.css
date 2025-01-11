@@ -1,0 +1,52 @@
+/* filepath: /c:/Users/Me/Workspace/PrivateLibrary/shelfport/static/css/book_list.css */
+.book-preview {
+    background: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.book-subtitle {
+    font-size: 1.2em;
+    color: #777;
+}
+
+.book-meta {
+    color: #999;
+    font-size: 0.9em;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background: #ddd;
+}
+
+.page-item.active a {
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+}
